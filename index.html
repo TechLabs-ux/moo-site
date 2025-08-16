@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moo Drive - Solução Simples para Home Servers</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-image: url('https://img.freepik.com/vetores-gratis/conjunto-de-black-blobs-flat_78370-2107.jpg?semt=ais_hybrid&w=740&q=80');
+            color: #FFFFFF;
+            -webkit-text-stroke: 2px #000000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            -webkit-text-stroke: 1px #000000;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #555555;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('https://example.com/moo-drive-banner.jpg') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hero-content {
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid #000000;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: #000000;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: #F5F5F5;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Mascot Section */
+        .mascot {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .mascot-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .mascot-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 2rem;
+            text-align: left;
+        }
+        
+        .mascot-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .mascot-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Download Section */
+        .download {
+            padding: 5rem 0;
+            background-color: #F5F5F5;
+            text-align: center;
+        }
+        
+        .download-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .download-card {
+            background-color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .footer-links li {
+            margin: 0 1rem;
+        }
+        
+        .footer-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            margin: 1rem 0;
+        }
+        
+        .social-icons a {
+            color: #FFFFFF;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .mascot-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="logo.png" alt="Moo Drive Logo">
+                    <span>Moo Drive</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Recursos</a></li>
+                    <li><a href="#download">Download</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Seu Home Server Fácil com Moo Drive</h1>
+                <p>Transforme qualquer computador em um poderoso servidor doméstico com nossa solução simples e intuitiva. Gerencie arquivos, stream de mídia e muito mais com apenas alguns cliques.</p>
+                <a href="#download" class="btn">Download Gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Recursos Poderosos</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🐄</div>
+                    <h3>Configuração Fácil</h3>
+                    <p>Interface intuitiva que guia você passo a passo na configuração do seu home server.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>Compartilhamento de Arquivos</h3>
+                    <p>Acesse seus arquivos de qualquer dispositivo, em qualquer lugar.</p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Mascot Section -->
+    <section class="mascot">
+        <div class="container">
+            <div class="mascot-content">
+                <div class="mascot-text">
+                    <h2>Conheça o Moo</h2>
+                    <p>Nosso mascote Moo está aqui para te guiar no mundo dos home servers. Com Moo Drive, você não precisa ser um especialista em tecnologia para ter seu próprio servidor doméstico.</p>
+                    <p>Moo simplifica processos complexos, tornando a experiência agradável e acessível para todos.</p>
+                </div>
+                <div class="mascot-image">
+                    <img src="moo-mascot.png" alt="Moo the Cow Mascot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <h2 class="section-title">Pronto para Começar?</h2>
+            <p>Baixe agora o Moo Drive e transforme seu computador em um home server poderoso.</p>
+            <div class="download-options">
+                
+                
+                <div class="download-card">
+                    <h3>Ubuntu server</h3>
+                    <p>For servers ubuntu</p>
+                    <a href="#" class="btn">Download</a>
+                </div>
+            <div class="download-card">
+                    <h3>Raspberry Pi(coming soon)</h3>
+                    <p>For Pi servers</p>
+                    <a href="#" class="btn">Download</a>
+                </div></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Moo Drive Logo">
+                <span>Moo Drive</span>
+            </div>
+            <p>© 2025 Moo Drive. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body></html>
